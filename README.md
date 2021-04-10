@@ -5,6 +5,13 @@ Predict levels of Work-Life Balance based on lifestyle factors, using a dataset 
 
 Dataset: https://www.kaggle.com/ydalat/lifestyle-and-wellbeing-data
 
+#### ```Project Goals:```
+- Create a model that will identify drivers of high personal achievement based on lifestyle factors. 
+- Create a single notebook with necessary helper functions and instructions that allow a user to reproduce results on their own. 
+
+Trello board:  https://trello.com/b/ebZrkO2D/lifestyle-factors-that-affect-personal-achievement
+
+
 #### ```Initial Thoughts:```
 
 - expect high correlation with sleep, stress, negative emotions, meditation 
@@ -16,12 +23,12 @@ Dataset: https://www.kaggle.com/ydalat/lifestyle-and-wellbeing-data
 
 #### ```Hypotheses:```
 
-H${0}$: There is no relationship between daily stress levels and personal achievement.
-H${a}$: There is a dependent relationship between daily stress levels and personal achievement.
-H${0}$: There is no relationship between bmi and levels of personal achievement. 
-H${a}$: There is a dependnt relationship between bmi and levels of personal achievement. 
-H${0}$: There is no relationship between sleep and levels of personal achievement. 
-H${a}$: There is a dependent relationship between sleep and levels of personal achievement. 
+H${0}$: There is no relationship between daily stress levels and personal achievement.<br>
+H${a}$: There is a dependent relationship between daily stress levels and personal achievement.<br>
+H${0}$: There is no relationship between bmi and levels of personal achievement. <br>
+H${a}$: There is a dependnt relationship between bmi and levels of personal achievement. <br>
+H${0}$: There is no relationship between sleep and levels of personal achievement. <br>
+H${a}$: There is a dependent relationship between sleep and levels of personal achievement. <br>
 
 #### ```Data Dictionary:``` 
 
