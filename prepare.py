@@ -18,14 +18,14 @@ def prep_wellbeing(df):
                 'TODO_COMPLETED', 
                 'LOST_VACATION', 
                 'FLOW', 
-                'PLACES_VISITED', 
-                'FRUITS_VEGGIES', 
-                'LIVE_VISION']
+                'PLACES_VISITED'
+                ]
     
     df.drop(columns=dropcols, inplace = True)
     
-    df['DAILY_STRESS'].replace('1/1/00', np.nan)
-       
+    index_stress = df.loc[df.DAILY_STRESS == '1/1/00'].index
+    df.drop(index_stress, inplace = True)
+            
     df = df.rename(columns={'BMI_RANGE':'bmi', 
                             'SLEEP_HOURS':'sleep_hrs', 
                             'AGE':'age_range', 
@@ -36,14 +36,18 @@ def prep_wellbeing(df):
                             'CORE_CIRCLE':'core_circle', 
                             'SUPPORTING_OTHERS':'support', 
                             'SOCIAL_NETWORK':'social', 
-                            'WORK_LIFE_BALANCE_SCORE':'balance',
                             'WEEKLY_MEDITATION':'meditation',
+                            'WORK_LIFE_BALANCE_SCORE':'balance',
                             'ACHIEVEMENT':'achievement',
                             'PERSONAL_AWARDS':'awards',
                             'DAILY_STEPS':'steps', 
                             'DAILY_SHOUTING':'shouts',
-                            'TIME_FOR_PASSION':'passion'})
-        
+                            'TIME_FOR_PASSION':'passion',
+                            'FRUITS_VEGGIES':'fruit_veg',
+                            'LIVE_VISION':'vision'
+                            })
+    
+
     df['stress'] = df['stress'].astype('int')
 
     return df

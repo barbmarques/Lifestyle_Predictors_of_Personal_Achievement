@@ -3,7 +3,7 @@
 Predict levels of Work-Life Balance based on lifestyle factors, using a dataset of 12,757 survey responses to 23 lifestyle attributes. The actual survey was given by given Authenic-Happiness.come and is linked here:  http://www.authentic-happiness.com/your-life-satisfaction-score
 
 
-Dataset: https://www.kaggle.com/ydalat/lifestyle-and-wellbeing-data
+Dataset: https://www.kaggle.com/ydalat/lifestyle-and-wellbeing-data?select=Wellbeing_and_lifestyle_data_Kaggle.csv
 
 #### ```Project Goals:```
 - Create a model that will identify drivers of high personal achievement based on lifestyle factors. 
@@ -59,7 +59,7 @@ sleep |typical number of hours of sleep per night over the course of a typical w
 |work_life_balance_score|||
 
 
-#### Instructions for Reproducing My Findings:
+#### ```Instructions for Reproducing My Findings:```
 
 1.  Start by cloning the github repository on your From your terminal command line, enter git clone git@github.com:barbmarques/Lifestyle_Predictors_of_Personal_Achievement.git
 
