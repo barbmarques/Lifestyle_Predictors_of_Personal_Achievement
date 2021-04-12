@@ -49,9 +49,35 @@ def prep_wellbeing(df):
     
 
     df['stress'] = df['stress'].astype('int')
+    
+    #Bin achievement levels
+    cut_labels_3 = ['low_ach', 'avg_ach', 'high_ach']
+    cut_bins = [-1, 1, 7, 11]
+    df['ach_level'] = pd.cut(df['achievement'], bins=cut_bins, labels=cut_labels_3)
+    
+    #Bin sleep by hours = ['0-4', '5-7', '8+']
+    cut_labels_s = ['0-4 hrs', '5-8 hrs', '9+ hrs']
+    cut_bins = [-1, 5, 9, 10]
+    df['sleep_bins'] = pd.cut(df['sleep_hrs'], bins=cut_bins, labels=cut_labels_s)
+    
 
+    # make dummy columns for achievement levels, age range, gender and sleep
+    ach_dummies = pd.get_dummies(df.ach_level, drop_first=False)
+    age_dummies = pd.get_dummies(df.age_range, drop_first=False)
+    gen_dummies = pd.get_dummies(df.gender, drop_first = False)
+    slp_dummies = pd.get_dummies(df.sleep_bins, drop_first=False)
+
+    
+    # Add encoded columns back onto original dataframe and drop original columns.
+    df = pd.concat([df, ach_dummies], axis=1)
+    df = pd.concat([df, gen_dummies], axis=1)  
+    df = pd.concat([df, age_dummies], axis=1)
+    df = pd.concat([df, slp_dummies], axis=1)
+    df.drop(columns = ['achievement'])
+    
+    df.rename(columns = {'Female':'female', 'Male':'male'}, inplace=True)
+    
     return df
-
 
 
 
